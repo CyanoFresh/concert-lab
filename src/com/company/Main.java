@@ -6,7 +6,7 @@ import java.util.Iterator;
 
 public class Main {
     public static void main(String[] args) {
-        Concert concert=createConcert();
+        Concert concert = createConcert();
         printConcert(concert);
     }
 
