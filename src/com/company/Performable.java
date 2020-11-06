@@ -1,5 +1,9 @@
 package com.company;
 
 public interface Performable {
-    void perform();
+    String perform();
+
+    String perform(Instrument instrument);
+
+    String getName();
 }

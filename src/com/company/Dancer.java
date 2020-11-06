@@ -9,7 +9,18 @@ public class Dancer extends Artist {
     }
 
     @Override
-    public void perform() {
-        System.out.println(name + " is dancing in " + style + " style");
+    public String perform() {
+        var sb = new StringBuilder();
+        sb.append(getName());
+        sb.append(" is dancing in ");
+        sb.append(style);
+        sb.append(" style");
+
+        return sb.toString();
+    }
+
+    @Override
+    public String perform(Instrument instrument) {
+        throw new NotPerformableException();
     }
 }

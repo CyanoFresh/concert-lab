@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
 public class Concert {
-    private String title;
+    private final String title;
     GregorianCalendar date;
     private Cashbox cashbox;
     private ArrayList<Artist> artists;
@@ -23,7 +23,9 @@ public class Concert {
     }
 
     public void addStaff(Staff staff) {
-        this.staff.add(staff);
+        if (!this.staff.contains(staff)) {
+            this.staff.add(staff);
+        }
     }
 
     public String getTitle() {

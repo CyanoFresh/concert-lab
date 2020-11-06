@@ -1,8 +1,8 @@
 package com.company;
 
 public class Staff {
-    private StaffType type;
-    private String name;
+    private final StaffType type;
+    private final String name;
     private Artist connectedArtist;
 
     public Staff(StaffType type, String name) {
@@ -19,5 +19,22 @@ public class Staff {
         }
 
         return s;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+
+        Staff other = (Staff) obj;
+
+        if (type != other.type)
+            return false;
+
+        return name.equals(other.name);
     }
 }
