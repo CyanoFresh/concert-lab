@@ -39,6 +39,16 @@ Concert Assemble
 
     Main 31 строка
 
+- Перевизначити метод equals або hashCode у одному з ваших класів, використати перевизначений метод для перевірки об’єктів цього класу. (1 бал) 
+
+    перевизначено у Staff 25 строка
+    
+    використовується у Concert 26 строка, метод ArrayList.contains() викликає equals() для перевірки
+    
+    ~~~
+    Returns true if this list contains the specified element. More formally, returns true if and only if this list contains at least one element e such that Objects.equals(o, e).
+    ~~~
+
 - присутня асоціація класів (1 бал) 
 
     Singer perform(Instrument instrument)
