@@ -41,11 +41,9 @@ Concert Assemble
 
 - присутня асоціація класів (1 бал) 
 
-    Singer perform()
-
-- присутня асоціація класів (1 бал) 
-
-    Singer perform()
+    Singer perform(Instrument instrument)
+    
+    між Singer та Instrument
 
 
 Structure:
