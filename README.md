@@ -37,7 +37,7 @@ Concert Assemble
 
 - Використати неперевизначений метод equals або hashCode для порівняння двох об’єктів одного з ваших класів. (1 бал) 
 
-    Main 31 строка
+    клас Main 31 строка
 
 - Перевизначити метод equals або hashCode у одному з ваших класів, використати перевизначений метод для перевірки об’єктів цього класу. (1 бал) 
 
@@ -51,7 +51,7 @@ Concert Assemble
 
 - присутня асоціація класів (1 бал) 
 
-    Singer perform(Instrument instrument)
+    клас Singer метод perform(Instrument instrument)
     
     між Singer та Instrument
 
