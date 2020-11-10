@@ -43,7 +43,7 @@ Concert Assemble
 
     перевизначено у Staff 25 строка
     
-    використовується у Concert 26 строка, метод ArrayList.contains() викликає equals() для перевірки
+    використовується у Concert 26 строка, метод ArrayList.contains() викликає equals() для перевірки наявності у списку
     
     ~~~
     Returns true if this list contains the specified element. More formally, returns true if and only if this list contains at least one element e such that Objects.equals(o, e).
