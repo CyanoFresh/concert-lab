@@ -2,10 +2,20 @@ package com.company;
 
 public class Dancer extends Artist {
     protected String style;
+    protected String firstname;
+    protected String lastname;
 
     public Dancer(String name, String phone, int popularity, int teamPersons, boolean needAccommodation, String style) {
         super(name, phone, popularity, teamPersons, needAccommodation);
         this.style = style;
+
+        String[] parts = name.split(" ");
+
+        this.firstname = parts[0];
+
+        if (parts.length > 2) {
+            this.lastname = parts[1];
+        }
     }
 
     @Override
