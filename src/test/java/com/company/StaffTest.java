@@ -14,7 +14,6 @@ public class StaffTest {
 
         assertEquals(s1, s2);
         assertEquals(s1, s1);
-
         assertNotEquals(s1, new Instrument("Test Instrument", InstrumentType.String));
         assertNotEquals(s1, s3);
         assertNotEquals(s1, s4);
