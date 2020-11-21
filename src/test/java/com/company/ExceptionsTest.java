@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 
 public class ExceptionsTest {
     @Test(expected = NotPerformableException.class)
-    public void performDancerWithInstrument() {
+    public void DancerFailToPerformWithInstrument() {
         Dancer dancer = new Dancer("Name", "+380", 10, 3, true, "Hip hop");
         var instrument = new Instrument("Guitar", InstrumentType.String);
 
@@ -13,7 +13,7 @@ public class ExceptionsTest {
     }
 
     @Test
-    public void performDancerWithoutInstrument() {
+    public void DancerPerformsWithoutInstrument() {
         Dancer dancer = new Dancer("Name", "+380", 10, 3, true, "Hip hop");
 
         String result = dancer.perform();

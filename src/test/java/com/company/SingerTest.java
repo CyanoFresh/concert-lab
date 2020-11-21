@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 
 public class SingerTest {
     @Test
-    public void performOutput() {
+    public void PerformResultWithoutInstrument() {
         var acdc = new Singer("AC/DC", "+100000", 10, 5, false, "Rock");
 
         var result2 = acdc.perform();
@@ -15,7 +15,7 @@ public class SingerTest {
     }
 
     @Test
-    public void performWithInstrumentOutput() {
+    public void PerformResultWithInstrument() {
         var acdc = new Singer("AC/DC", "+100000", 10, 5, false, "Rock");
         var instrument = new Instrument("Guitar", InstrumentType.String);
 

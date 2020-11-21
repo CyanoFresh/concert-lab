@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 
 public class StaffTest {
     @Test
-    public void staffEquals() {
+    public void StaffEqualsMethod() {
         var s1 = new Staff(StaffType.Organizer, "Den");
         var s2 = new Staff(StaffType.Organizer, "Den");
         var s3 = new Staff(StaffType.Organizer, "Bob");
@@ -21,7 +21,7 @@ public class StaffTest {
     }
 
     @Test
-    public void staffToString() {
+    public void StaffToStringConversion() {
         var s1 = new Staff(StaffType.Organizer, "Den");
 
         assertEquals(s1.toString(), "Staff member: " + s1.name + " - " + s1.type);

@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 
 public class ConcertTest {
     @Test
-    public void addDuplicateStaff() {
+    public void DuplicatedStaffIsNotAddedToTheList() {
         var date = new GregorianCalendar(2020, Calendar.JANUARY, 1);
         var concert = new Concert("Rock and Dance", date, 2000);
 
@@ -25,7 +25,7 @@ public class ConcertTest {
     }
 
     @Test
-    public void addDuplicateArtist() {
+    public void DuplicatedArtistIsAddedToTheList() {
         var date = new GregorianCalendar(2020, Calendar.JANUARY, 1);
         var concert = new Concert("Rock and Dance", date, 2000);
 
