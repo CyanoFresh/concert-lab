@@ -8,4 +8,12 @@ public class ArtistTeam {
         this.personsCount = personsCount;
         this.needAccommodation = needAccommodation;
     }
+
+    public int getPersonsCount() {
+        return personsCount;
+    }
+
+    public boolean isNeedAccommodation() {
+        return needAccommodation;
+    }
 }

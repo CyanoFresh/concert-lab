@@ -11,6 +11,10 @@ public class Instrument {
 
     @Override
     public String toString() {
+        return getFullName();
+    }
+
+    public String getFullName() {
         return name + " (" + this.type + ")";
     }
 }

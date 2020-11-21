@@ -18,6 +18,19 @@ public class Dancer extends Artist {
         }
     }
 
+    public Dancer(String name, String phone, int popularity, ArtistTeam team, String style) {
+        super(name, phone, popularity, team);
+        this.style = style;
+
+        String[] parts = name.split(" ");
+
+        this.firstname = parts[0];
+
+        if (parts.length > 2) {
+            this.lastname = parts[1];
+        }
+    }
+
     @Override
     public String perform() {
         var sb = new StringBuilder();

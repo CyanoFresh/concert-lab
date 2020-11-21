@@ -28,7 +28,7 @@ public class Singer extends Artist {
         sb.append(" is singing in ");
         sb.append(genre);
         sb.append(" genre using ");
-        sb.append(instrument);
+        sb.append(instrument.getFullName());
         sb.append(" instrument");
 
         return sb.toString();

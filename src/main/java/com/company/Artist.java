@@ -14,8 +14,23 @@ public abstract class Artist implements Performable {
         this.team = new ArtistTeam(teamPersons, needAccommodation);
     }
 
+    public Artist(String name, String phone, int popularity, ArtistTeam team) {
+        this.name = name;
+        this.phone = phone;
+        this.popularity = popularity;
+        this.team = team;
+    }
+
+    public int getPersonsCount() {
+        return this.team.getPersonsCount() + 1;
+    }
+
     @Override
     public String getName() {
         return name;
+    }
+
+    public ArtistTeam getTeam() {
+        return team;
     }
 }
