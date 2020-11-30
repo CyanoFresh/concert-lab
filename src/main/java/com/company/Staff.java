@@ -1,9 +1,9 @@
 package com.company;
 
 public class Staff {
-    private final StaffType type;
-    private final String name;
-    private Artist connectedArtist;
+    protected final StaffType type;
+    protected final String name;
+    protected Artist connectedArtist;
 
     public Staff(StaffType type, String name) {
         this.type = type;
