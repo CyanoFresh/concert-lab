@@ -58,7 +58,14 @@ public class Concert {
 
         @Override
         public String toString() {
-            return ""+ maxCapacity;
+            return "" + maxCapacity;
         }
+    }
+
+    public int countSingerTeams() {
+        return artists
+                .stream()
+                .filter(e -> e instanceof Singer)
+                .reduce(0, (sum, e) -> sum + e.team.getPersonsCount(), Integer::sum);
     }
 }
