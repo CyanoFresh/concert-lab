@@ -25,6 +25,10 @@ public abstract class Artist implements Performable {
         return this.team.getPersonsCount() + 1;
     }
 
+    public int getPopularity() {
+        return popularity;
+    }
+
     @Override
     public String getName() {
         return name;
@@ -32,5 +36,13 @@ public abstract class Artist implements Performable {
 
     public ArtistTeam getTeam() {
         return team;
+    }
+
+    @Override
+    public String toString() {
+        return "Artist{" +
+                "name='" + name + '\'' +
+                ", popularity=" + popularity +
+                '}';
     }
 }

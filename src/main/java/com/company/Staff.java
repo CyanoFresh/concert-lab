@@ -1,24 +1,37 @@
 package com.company;
 
+import java.util.ArrayList;
+
 public class Staff {
     protected final StaffType type;
     protected final String name;
-    protected Artist connectedArtist;
+    protected ArrayList<Artist> connectedArtists;
 
     public Staff(StaffType type, String name) {
         this.type = type;
         this.name = name;
+        this.connectedArtists = new ArrayList<>();
+    }
+
+    public ArrayList<Artist> getConnectedArtists() {
+        return connectedArtists;
     }
 
     @Override
     public String toString() {
-        String s = "Staff member: " + name + " - " + type;
+        StringBuilder s = new StringBuilder("Staff member: " + name + " - " + type);
 
-        if (connectedArtist != null) {
-            s += " - artist: " + connectedArtist.name;
+        if (connectedArtists.size() > 0) {
+            s.append(" - Connected Artists:\n");
         }
 
-        return s;
+        for (Artist artist : connectedArtists) {
+            s.append(" * ");
+            s.append(artist.perform());
+            s.append("\n");
+        }
+
+        return s.toString();
     }
 
     @Override

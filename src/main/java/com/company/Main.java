@@ -37,6 +37,13 @@ public class Main {
         var mark = new Staff(StaffType.Engineer, "Mark");
         var dan = new Staff(StaffType.Stewart, "Dan");
         var bob = new Staff(StaffType.Organizer, "Bob");
+
+        dan.getConnectedArtists().add(acdc);
+        dan.getConnectedArtists().add(rammstein);
+        bob.getConnectedArtists().add(trs);
+        bob.getConnectedArtists().add(vv);
+        bob.getConnectedArtists().add(mg);
+
         concert.addStaff(mark);
         concert.addStaff(dan);
         concert.addStaff(bob);
@@ -82,5 +89,11 @@ public class Main {
         for (Staff staff : concert.getStaff()) {
             System.out.println(staff);
         }
+
+        var concertRepository = new ConcertRepository(concert);
+
+        System.out.println("Sum of singer team count: " + concertRepository.sumSingerTeamCount());
+        System.out.println("Average staff artist popularity: " + concertRepository.calcAverageStaffArtistsRating());
+        System.out.println("Most popular Artist: " + concertRepository.getMostPopularArtist());
     }
 }
