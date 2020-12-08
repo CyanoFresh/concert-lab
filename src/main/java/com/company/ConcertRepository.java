@@ -46,8 +46,8 @@ public class ConcertRepository {
         return artist -> artist instanceof Singer;
     }
 
-    public Map<String, List<Artist>> groupArtistByPopularity() {
-        return findArtists()
+    public Map<String, List<Artist>> groupArtistByPopularity(Predicate<? super Artist> filter) {
+        return findArtists(filter)
                 .collect(Collectors.groupingBy(artist -> artist.popularity >= 8 ? "popular" : "not popular"));
     }
 }

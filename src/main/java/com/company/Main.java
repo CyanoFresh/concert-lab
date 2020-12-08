@@ -97,7 +97,7 @@ public class Main {
         System.out.println("Most popular Artist: " + concertRepository.getMostPopularArtist());
 
         concertRepository
-                .groupArtistByPopularity()
+                .groupArtistByPopularity(ConcertRepository.singerArtists())
                 .forEach((key, value) -> System.out.println(key + ": " + value));
     }
 }
