@@ -40,9 +40,6 @@ public abstract class Artist implements Performable {
 
     @Override
     public String toString() {
-        return "Artist{" +
-                "name='" + name + '\'' +
-                ", popularity=" + popularity +
-                '}';
+        return name + " " + popularity + " stars";
     }
 }

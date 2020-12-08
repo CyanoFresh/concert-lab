@@ -95,5 +95,9 @@ public class Main {
         System.out.println("Sum of singer team count: " + concertRepository.sumSingerTeamCount());
         System.out.println("Average staff artist popularity: " + concertRepository.calcAverageStaffArtistsRating());
         System.out.println("Most popular Artist: " + concertRepository.getMostPopularArtist());
+
+        concertRepository
+                .groupArtistByPopularity()
+                .forEach((key, value) -> System.out.println(key + ": " + value));
     }
 }

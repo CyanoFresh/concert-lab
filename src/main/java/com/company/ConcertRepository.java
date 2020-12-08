@@ -1,8 +1,11 @@
 package com.company;
 
 import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class ConcertRepository {
@@ -41,5 +44,10 @@ public class ConcertRepository {
 
     public static Predicate<Artist> singerArtists() {
         return artist -> artist instanceof Singer;
+    }
+
+    public Map<String, List<Artist>> groupArtistByPopularity() {
+        return findArtists()
+                .collect(Collectors.groupingBy(artist -> artist.popularity >= 8 ? "popular" : "not popular"));
     }
 }
