@@ -5,10 +5,10 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 
-public class ArtistTest {
+public class ArtistIT {
     @Test
     public void ArtistPersonsShouldTeamPersonsCountPlusOne() {
-        var team = mock(ArtistTeam.class);
+        var team = spy(new ArtistTeam(10, true));
         var artist = new Dancer("Test Name", "098", 10, team, "hip-hop");
 
         var expectedPersonsCount = 5;
