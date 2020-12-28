@@ -1,5 +1,8 @@
 package com.company;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public enum InstrumentType {
     String("String instruments, stringed instruments, or chordophones are musical instruments that produce sound from vibrating strings when the performer plays or sounds the strings in some manner.") {
         @Override
@@ -22,6 +25,8 @@ public enum InstrumentType {
 
     String description;
 
+    private static final Logger logger = LogManager.getLogger(InstrumentType.class);
+
     InstrumentType(java.lang.String description) {
         this.description = description;
     }
@@ -32,7 +37,7 @@ public enum InstrumentType {
 
     public static void printDescriptionsList() {
         for (InstrumentType it : InstrumentType.values()) {
-            System.out.println(it.getDescription());
+            logger.info(it.getDescription());
         }
     }
 }

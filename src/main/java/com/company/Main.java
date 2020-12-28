@@ -1,10 +1,14 @@
 package com.company;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class Main {
+    private static final Logger logger = LogManager.getLogger(Main.class.getName());
+
     public static void main(String[] args) {
         var concert = createConcert();
         printConcert(concert);
@@ -29,9 +33,9 @@ public class Main {
         concert.inviteArtist(fa);
 
         if (vv.equals(mg)) {
-            System.out.println("Two artists are the same");
+            logger.debug("Two artists are the same");
         } else {
-            System.out.println("Two artists are not the same");
+            logger.debug("Two artists are not the same");
         }
 
         var mark = new Staff(StaffType.Engineer, "Mark");
@@ -53,13 +57,13 @@ public class Main {
     }
 
     private static void printConcert(Concert concert) {
-        System.out.println("Concert: " + concert.getTitle());
-        System.out.println("Maximum cashbox capacity: $" + concert.getCashbox());
-        System.out.println("Date: " + concert.getDate().getTime());
-        System.out.println("\nInstrument Types: ");
+        logger.info("Concert: " + concert.getTitle());
+        logger.info("Maximum cashbox capacity: $" + concert.getCashbox());
+        logger.info("Date: " + concert.getDate().getTime());
+        logger.info("\nInstrument Types: ");
         InstrumentType.printDescriptionsList();
 
-        System.out.println("\nProgram: ");
+        logger.info("\nProgram: ");
 
         var instruments = new ArrayList<Instrument>();
         instruments.add(new Instrument("Guitar", InstrumentType.String));
@@ -71,33 +75,33 @@ public class Main {
             var artist = iterator.next();
 
             try {
-                System.out.println(artist.perform(instruments.get(0)));
+                logger.info(artist.perform(instruments.get(0)));
             } catch (NotPerformableException e) {
-                System.err.println(e.getMessage());
+                logger.info(e.getMessage());
             } finally {
-                System.out.println(artist.perform());
+                logger.info(artist.perform());
             }
 
             sb.append(artist.getName());
             sb.append(", ");
         }
 
-        System.out.println("\nList of performed artists: " + sb);
+        logger.info("\nList of performed artists: " + sb);
 
-        System.out.println("\nStaff during performance: \n");
+        logger.info("\nStaff during performance: \n");
 
         for (Staff staff : concert.getStaff()) {
-            System.out.println(staff);
+            logger.info(staff);
         }
 
         var concertRepository = new ConcertRepository(concert);
 
-        System.out.println("Sum of singer team count: " + concertRepository.sumSingerTeamCount());
-        System.out.println("Average staff artist popularity: " + concertRepository.calcAverageStaffArtistsRating());
-        System.out.println("Most popular Artist: " + concertRepository.getMostPopularArtist());
+        logger.info("Sum of singer team count: " + concertRepository.sumSingerTeamCount());
+        logger.info("Average staff artist popularity: " + concertRepository.calcAverageStaffArtistsRating());
+        logger.info("Most popular Artist: " + concertRepository.getMostPopularArtist());
 
         concertRepository
                 .groupArtistByPopularity(ConcertRepository.singerArtists())
-                .forEach((key, value) -> System.out.println(key + ": " + value));
+                .forEach((key, value) -> logger.info(key + ": " + value));
     }
 }
